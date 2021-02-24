@@ -1,0 +1,180 @@
+/*indexPageのCSS*/
+*{
+	color: black;
+	font-family: arial;
+}
+
+html,
+body{
+	margin: 0;
+	height: 100%;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.wrapper .indexPage{
+	justify-content: center;
+}
+
+.mainSection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mainSection .searchContainer{
+	margin-top: 15px;
+	height: 100%;
+}
+
+.mainSection .searchContainer form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.searchContainer .searchButton{
+	color: #757575;
+	background-color: #f5f5f5;
+	border: none;
+	height: 30px;
+	width: 100px;
+	border-radius: 1px;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 30px;
+	cursor: pointer;
+	outline: none;
+}
+
+.searchContainer .searchButton:hover{
+	 background-color: gold;
+}
+
+.mainSection .searchContainer .searchBox{
+	background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    height: 45px;
+    margin: 0 auto;
+    width: 350px;
+    max-width: 700px;
+    outline: none;
+}
+/*indexPageのCSSおわり*/
+
+
+/*searchPageのCSS開始*/
+.header{
+	background-color: #FAFAFA;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.headerContent{
+	display: flex;
+	align-items: center;
+}
+
+.logo{
+/*searchPageのロゴについてのスタイルシート*/
+	width: 50%;
+	padding: 5px 20px;
+	box-sizing: border-box;
+}
+
+.headerContent .searchContainer{
+	flex: 1;
+}
+
+.headerContent .searchContainer form{
+	margin: 15px 0 30px 0;
+}
+
+.headerContent .searchBarContainer{
+	background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    height: 39px;
+    width: 690px;
+    border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    left: 200px;
+    top: 22px;
+}
+
+.headerContent .searchBarContainer .searchbox{
+	margin-top:1px;
+	flex: 1;
+	border: none;
+	background-color: transparent;
+	padding: 10px;
+	font-size: 15px;
+	color:black;
+	outline: none;
+}
+
+.headerContent .searchBarContainer .searchButton{
+	color: transparent;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 1px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search{
+/*searchPageの検索ボタンの画像についてのスタイルシート*/
+	margin-left: 50px;
+    margin-top: -39px;
+    background-color: #fff;
+    height: 28px;
+    width: 28px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.tabsContainer{
+	margin-left: 150px
+}
+
+.tabsContainer .tabList{
+	padding: 0;
+}
+
+.tabsContainer .tabList li{
+	display: inline-block;
+  padding: 0 15px 5px 20px;
+	font-size: 16px;
+}
+
+.tabsContainer .tabList li a{
+	text-decoration: none;
+}
+
+.tabsContainer .tabList li.active{
+	border-bottom: 3.5px solid #89cff6;
+}
+
+.tabsContainer .tabList li.active a{
+	font-weight: bold;
+	color: #89cff6;
+}
