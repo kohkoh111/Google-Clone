@@ -1,5 +1,8 @@
 <?php
 
+	include("config.php");
+	include("class/SiteResultsProvider.php");
+
 	if(isset($_GET["term"])) {
 		$term = $_GET["term"];
 	} else {
@@ -60,8 +63,11 @@
 
 					</ul>
 				</div>
-
 			</div> <!-- divクラスheaderの終了タグ -->
+
+			<div class="mainResultsSection">
+
+			</div>
 		</div> <!-- divクラスwrapperの終了タグ -->
 </body>
 </html>

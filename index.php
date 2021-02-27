@@ -3,6 +3,12 @@
 <html>
 	<head>
 		<title>Welcome to doodle</title>
+
+		<meta charset="UTF-8">
+		<meta name="description" content="Free Web tutorials">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Koki Takata">
+
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
 
