@@ -9,7 +9,8 @@ $alreadyFoundImages = array();
 function linkExists($url) {
 	global $con;
 
-	$query = $con->prepare("SELECT * FROM sites WHERE url = :url");
+	$query = $con->prepare("SELECT * FROM sites WHERE url = :url")
+	;
 
 	$query->bindParam(":url", $url);
 	$query->execute();
@@ -70,7 +71,6 @@ function createLink($src, $url) {
 }
 
 function getDetails($url) {
-
 	global $alreadyFoundImages;
 
 	$parser = new Parser($url);
@@ -107,38 +107,32 @@ function getDetails($url) {
 	$description = str_replace("\n", "", $description);
 	$keywords = str_replace("\n", "", $keywords);
 
-
-	if(linkExists($url)) {
-		echo "$url already exists<br>";
-	}
-	else if(insertLink($url, $title, $description, $keywords)) {
-		echo "SUCCESS: $url<br>";
-	}
-	else {
-		echo "ERROR: Failed to insert $url<br>";
+	if(linkExists($url)){
+		echo "$url already Exist<br>";
+	}else if (insertLink($url, $title, $description, $keywords)){
+		echo "Success: $url<br>";
+	}else{
+		echo "Error: failed to insert $url<br>";
 	}
 
 	$imageArray = $parser->getImages();
-	foreach($imageArray as $image) {
+	foreach($imageArray as $image){
 		$src = $image->getAttribute("src");
 		$alt = $image->getAttribute("alt");
 		$title = $image->getAttribute("title");
 
-		if(!$title && !$alt) {
-			continue;
+	if(!$title && !$alt){
+		continue;
 		}
 
-		$src = createLink($src, $url);
+	$src = createLink($src, $url);
 
-		if(!in_array($src, $alreadyFoundImages)) {
-			$alreadyFoundImages[] = $src;
+	if(!in_array($src, $alreadyFoundImages)){
+		$alreadyFoundImages[] = $src;
 
-			echo "INSERT: " . insertImage($url, $src, $alt, $title);
+		echo "INSERT:".insertImage($url, $src, $alt, $title);
 		}
-
 	}
-
-
 }
 
 function followLinks($url) {
@@ -170,7 +164,6 @@ function followLinks($url) {
 
 			getDetails($href);
 		}
-
 	}
 
 	array_shift($crawling);
@@ -181,6 +174,6 @@ function followLinks($url) {
 
 }
 
-$startUrl = "http://www.bbc.com";
+$startUrl = "http://www.google.com";
 followLinks($startUrl);
 ?>
